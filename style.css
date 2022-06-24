@@ -1,0 +1,254 @@
+:root {
+  --color-accent: #47167d;
+  --color-title: #fff;
+  --bg-color: #efefef;
+}
+
+html {
+  color: var(--color-accent);
+  /* font-size: calc(100vw / 46); */
+  font-size: 20px;
+}
+
+body {
+  padding: 0;
+
+  width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a,
+a:visited {
+  color: var(--color-title);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-shadow: 0px 0px 4px #66329e;
+}
+
+.icon-mail::before {
+  content: "✉";
+  position: absolute;
+  left: -1.5rem;
+}
+
+.icon-tel::before {
+  content: "✆";
+  position: absolute;
+  left: -1.5rem;
+}
+
+.icon-github::before {
+  content: "";
+  position: absolute;
+  background-image: url(./imgs/GitHub-Mark-64px.png);
+  background-size: 100%;
+  /* background-repeat: no-repeat;
+    background-position: 0 0.1rem; */
+
+  height: 1rem;
+  width: 1rem;
+  left: -1.5rem;
+  top: 0.2rem;
+}
+
+.grid {
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+
+  column-gap: 2rem;
+  /* row-gap: 2rem; */
+
+  grid-template-areas:
+    "header header"
+    ". profile"
+    "skills experience"
+    "education education";
+
+  background-color: var(--bg-color);
+  background-image: url(./imgs/bg2.png), url(./imgs/bg1.png);
+  background-position: -8.3rem -11.25rem, bottom right;
+  background-repeat: no-repeat;
+
+  background-size: 46rem, 10rem;
+}
+
+/* =================== */
+/* === HEADER === */
+/* =================== */
+
+.header {
+  color: var(--color-title);
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  width: 7ch;
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  font-variant-caps: all-petite-caps;
+}
+
+.contact-info__title {
+  /* width: 7ch; */
+  margin-top: 1rem;
+  hyphens: manual;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  font-variant-caps: all-petite-caps;
+}
+
+.contact-info__title::after {
+  background-color: var(--color-title);
+}
+
+.contact-info__title > span {
+  display: block;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  height: 0.1rem;
+  width: 100%;
+  background-color: var(--color-accent);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contacts_item {
+  position: relative;
+}
+
+.header-column-2.img-wrapper {
+  margin: 2rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 90%;
+  overflow: hidden;
+}
+
+.header-column-2.img-wrapper > img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* =================== */
+/* === PROFILE === */
+/* =================== */
+
+.profile {
+  margin-top: -1.8rem;
+  margin-bottom: 1rem;
+}
+
+.profile__description {
+  max-width: 48ch;
+}
+
+/* =================== */
+/* === SKILLS === */
+/* =================== */
+
+.skills__item {
+  list-style: disc;
+}
+
+/* =================== */
+/* === EXPERIENSE === */
+/* =================== */
+
+/* .experience {
+    margin-top: 2rem;
+} */
+
+.exp {
+  padding-left: 0;
+}
+
+.exp-item {
+  margin-top: 0.5rem;
+}
+
+.exp__sub-list {
+  padding-left: 1rem;
+}
+
+.exp__sub-item {
+  padding-left: 0;
+  list-style: disc;
+}
+
+/* =================== */
+/* === EDUCATION === */
+/* =================== */
+
+.education__list {
+  padding-left: 0;
+  width: 100%;
+}
+
+.education__sub-list {
+  padding-left: 0;
+}
+
+.education__sub-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.list-disc {
+  list-style: disc;
+}
+
+/* .list-disc::marker {
+    margin: -10px;
+} */
+
+.education__clm-1 {
+  width: 33%;
+}
+
+.education__clm-1 > h3 {
+  text-align: center;
+}
+
+.education__clm-2 {
+  margin-left: 2rem;
+  width: 65%;
+}
+
+/* =================== */
+/* === GRID === */
+/* =================== */
+
+section,
+header {
+  /* outline: 1px grey solid; */
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.skills {
+  grid-area: skills;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+.education {
+  grid-area: education;
+}

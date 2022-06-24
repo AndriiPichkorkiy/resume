@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, p { 
+    margin: 0;
+}
+
+ul {
+    margin-top: 0.5rem;
+}
