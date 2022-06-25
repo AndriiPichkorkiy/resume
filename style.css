@@ -2,12 +2,15 @@
   --color-accent: #47167d;
   --color-title: #fff;
   --bg-color: #efefef;
+
+  --link-project-color: #e89331;
 }
 
 html {
   color: var(--color-accent);
   /* font-size: calc(100vw / 46); */
   font-size: 20px;
+  font-family: "TeXGyreAdventorRegular";
 }
 
 body {
@@ -21,11 +24,13 @@ body {
 a,
 a:visited {
   color: var(--color-title);
+  fill: var(--color-title);
   text-decoration: none;
 }
 
 a:hover {
   color: var(--color-accent);
+  fill: #66329e;
   text-shadow: 0px 0px 4px #66329e;
 }
 
@@ -41,22 +46,28 @@ a:hover {
   left: -1.5rem;
 }
 
-.icon-github::before {
+.github-img {
+  position: absolute;
+
+  left: -1.5rem;
+  top: 0.2rem;
+
+}
+
+/* .icon-github::before {
   content: "";
   position: absolute;
-  background-image: url(./imgs/GitHub-Mark-64px.png);
+  background-image: url(./imgs/github-icon.svg);
   background-size: 100%;
-  /* background-repeat: no-repeat;
-    background-position: 0 0.1rem; */
 
   height: 1rem;
   width: 1rem;
   left: -1.5rem;
   top: 0.2rem;
-}
+} */
 
 .grid {
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   /* grid-template-rows: 1fr 1fr 1fr 1fr; */
@@ -68,7 +79,7 @@ a:hover {
     "header header"
     ". profile"
     "skills experience"
-    "education education";
+    "projects education";
 
   background-color: var(--bg-color);
   background-image: url(./imgs/bg2.png), url(./imgs/bg1.png);
@@ -92,7 +103,8 @@ a:hover {
 .header-title {
   width: 7ch;
   font-size: 2.5rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.6rem;
+  line-height: 2.9rem;
   font-variant-caps: all-petite-caps;
 }
 
@@ -188,6 +200,37 @@ h2::after {
 }
 
 /* =================== */
+/* === PROJECT === */
+/* =================== */
+.projects__list {
+  padding-left: 1rem;
+}
+
+.projects__item:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.project__link,
+.project__link:link,
+.project__link:visited {
+  color: var(--link-project-color);
+}
+
+.projects__item,
+.project__link:visited {
+  list-style-type: disc;
+}
+
+.project__link:hover {
+  color: var(--link-project-color);
+  text-shadow: 0px 0px 4px #ea983a;
+}
+
+.project__description {
+  font-size: 0.8rem;
+}
+
+/* =================== */
 /* === EDUCATION === */
 /* =================== */
 
@@ -209,6 +252,7 @@ h2::after {
 
 .list-disc {
   list-style: disc;
+  margin-left: 1rem;
 }
 
 /* .list-disc::marker {
@@ -216,7 +260,7 @@ h2::after {
 } */
 
 .education__clm-1 {
-  width: 33%;
+  width: 50%;
 }
 
 .education__clm-1 > h3 {
@@ -225,7 +269,7 @@ h2::after {
 
 .education__clm-2 {
   margin-left: 2rem;
-  width: 65%;
+  width: 45%;
 }
 
 /* =================== */
@@ -247,6 +291,10 @@ header {
 
 .experience {
   grid-area: experience;
+}
+
+.projects {
+  grid-area: projects;
 }
 
 .education {
