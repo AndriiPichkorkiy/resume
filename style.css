@@ -3,7 +3,7 @@
   --color-title: #fff;
   --bg-color: #efefef;
 
-  --link-project-color: #e89331;
+  --link-project-color: #d57d16;
 }
 
 html {
@@ -29,6 +29,7 @@ a:visited {
 }
 
 a:hover {
+  --color-linkedin: var(--color-accent);
   color: var(--color-accent);
   fill: #66329e;
   text-shadow: 0px 0px 4px #66329e;
@@ -51,7 +52,6 @@ a:hover {
 
   left: -1.5rem;
   top: 0.2rem;
-
 }
 
 /* .icon-github::before {
@@ -67,7 +67,7 @@ a:hover {
 } */
 
 .grid {
-  padding: 2rem 2rem;
+  padding: 28px 32px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   /* grid-template-rows: 1fr 1fr 1fr 1fr; */
@@ -78,15 +78,17 @@ a:hover {
   grid-template-areas:
     "header header"
     ". profile"
+    "skills profile"
     "skills experience"
-    "projects education";
+    "languages projects"
+    "education projects";
 
   background-color: var(--bg-color);
   background-image: url(./imgs/bg2.png), url(./imgs/bg1.png);
-  background-position: -8.3rem -11.25rem, bottom right;
+  background-position: -8.3rem -12.25rem, bottom right;
   background-repeat: no-repeat;
 
-  background-size: 46rem, 10rem;
+  background-size: 46rem, 13rem;
 }
 
 /* =================== */
@@ -141,9 +143,9 @@ h2::after {
 
 .header-column-2.img-wrapper {
   margin: 2rem;
-  width: 200px;
-  height: 200px;
-  border-radius: 90%;
+  width: 255px;
+  height: 255px;
+  border-radius: 45%;
   overflow: hidden;
 }
 
@@ -171,6 +173,14 @@ h2::after {
 /* =================== */
 
 .skills__item {
+  list-style: disc;
+}
+
+/* =================== */
+/* === LANGUAGES === */
+/* =================== */
+
+.languages__item {
   list-style: disc;
 }
 
@@ -235,6 +245,7 @@ h2::after {
 /* =================== */
 
 .education__list {
+  margin-bottom: 0;
   padding-left: 0;
   width: 100%;
 }
@@ -243,9 +254,13 @@ h2::after {
   padding-left: 0;
 }
 
+.education__sub-list > li {
+  font-weight: 500;
+}
+
 .education__sub-item {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   width: 100%;
   margin-top: 1rem;
 }
@@ -259,13 +274,13 @@ h2::after {
     margin: -10px;
 } */
 
-.education__clm-1 {
+/* .education__clm-1 {
   width: 50%;
-}
+} */
 
-.education__clm-1 > h3 {
+/* .education__clm-1 > h3 {
   text-align: center;
-}
+} */
 
 .education__clm-2 {
   margin-left: 2rem;
@@ -287,6 +302,10 @@ header {
 
 .skills {
   grid-area: skills;
+}
+
+.languages {
+  grid-area: languages;
 }
 
 .experience {
