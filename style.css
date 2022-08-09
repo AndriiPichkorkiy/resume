@@ -25,7 +25,8 @@ a,
 a:visited {
   color: var(--color-title);
   fill: var(--color-title);
-  text-decoration: none;
+  /* text-decoration: none; */
+  margin-right: 0.3rem;
 }
 
 a:hover {
@@ -135,6 +136,10 @@ h2::after {
   background-color: var(--color-accent);
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.contacts {
+  /* padding-left: 0; */
 }
 
 .contacts_item {
